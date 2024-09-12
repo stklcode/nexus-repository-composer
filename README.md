@@ -20,7 +20,7 @@
 
 #### Build with Docker
 
-    docker buildx build --platform linux/arm64 -t nexus3 .
+    docker buildx build --platform linux/arm64 -t nexus-repository-composer .
 
 #### Run as a Docker container
 
