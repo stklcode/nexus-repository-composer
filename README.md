@@ -54,6 +54,15 @@ configurations are recommended:
       composer config repo.focus composer http://localhost:8081/repository/focus-group
 
 Now by installing or requiring packages, those should be able to pull them from the nexus repo.
+Your composer.json shoudl have a block like this one:
+
+    "repositories": {
+        "packagist": false,
+        "focus": {
+            "type": "composer",
+            "url": "http://localhost:8081/repository/focus-group"
+        }
+    }
 
 ## The Fine Print
 
