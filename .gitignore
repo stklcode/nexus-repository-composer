@@ -28,5 +28,3 @@ target/
 atlassian-ide-plugin.xml
 dependency-reduced-pom.xml
 out
-# ci config for local ci build
-.circleci/local-config.yml
