@@ -1,5 +1,5 @@
 <!--
-  Focus Devs - 2024
+  Focused Devs - 2024
 -->
 # Nexus Repository Composer Plug In
 
@@ -37,6 +37,23 @@ The application will now be available from your browser at http://localhost:8081
       
   Once logged into the application UI as `admin` using the generated password, you should also 
   turn on "Enable anonymous access" when prompted by the setup wizard.
+
+#### Set up in composer
+
+In order to get composer to query first in your nexus repository, the following
+configurations are recommended:
+
+* In case you have not set a secure connection for your repo yet (these is not recommended for production!)
+
+      composer config secure-http false
+* Tell composer to go to your localhost nexus repo
+      
+      composer config repo.focus composer http://localhost:8081/repository/focus-group
+* And not to go to the Packagist repo
+  
+      composer config repo.focus composer http://localhost:8081/repository/focus-group
+
+Now by installing or requiring packages, those should be able to pull them from the nexus repo.
 
 ## The Fine Print
 
