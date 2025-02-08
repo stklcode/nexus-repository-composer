@@ -692,7 +692,7 @@ public class ComposerJsonProcessor
                                             final String shasum,
                                             final String type)
   {
-    String packageNameParts[] = packageName.split("/");
+    String[] packageNameParts = packageName.split("/");
     String packageVendor = packageNameParts[0];
     String packageProject = packageNameParts[1];
     Map<String, Object> newDistInfo = new LinkedHashMap<>();
@@ -743,7 +743,7 @@ public class ComposerJsonProcessor
 
   private Map<String, Object> parseJson(final Payload payload) throws IOException {
     try (InputStream in = payload.openInputStream()) {
-      TypeReference<Map<String, Object>> typeReference = new TypeReference<Map<String, Object>>()
+      TypeReference<Map<String, Object>> typeReference = new TypeReference<>()
       {
       };
       return mapper.readValue(in, typeReference);
