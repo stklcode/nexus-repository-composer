@@ -163,8 +163,8 @@ public class ComposerJsonProcessor
       .appendOffset("+HH:MM", "+00:00")
       .toFormatter();
 
-  private ComposerJsonExtractor composerJsonExtractor;
-  private ComposerJsonMinifier composerJsonMinifier;
+  private final ComposerJsonExtractor composerJsonExtractor;
+  private final ComposerJsonMinifier composerJsonMinifier;
 
   @Inject
   public ComposerJsonProcessor(final ComposerJsonExtractor composerJsonExtractor, final ComposerJsonMinifier composerJsonMinifier) {

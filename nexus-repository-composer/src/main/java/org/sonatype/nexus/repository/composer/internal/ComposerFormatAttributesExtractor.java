@@ -104,7 +104,7 @@ public class ComposerFormatAttributesExtractor
       .put(SUPPORT_RSS, P_SUPPORT_RSS)
       .build();
 
-  private ComposerJsonExtractor composerJsonExtractor;
+  private final ComposerJsonExtractor composerJsonExtractor;
 
   @Inject
   public ComposerFormatAttributesExtractor(final ComposerJsonExtractor composerJsonExtractor) {
