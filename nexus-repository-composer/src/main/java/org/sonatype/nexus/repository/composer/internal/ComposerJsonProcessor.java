@@ -345,7 +345,7 @@ public class ComposerJsonProcessor
     while (!components.isEmpty()) {
       for (FluentComponent component : components) {
         FluentAsset asset = component.assets().stream().findFirst().orElse(null);
-        if (!asset.hasBlob()) {
+        if (asset == null || !asset.hasBlob()) {
           return null;
         }
         AssetBlob assetBlob = asset.blob().get();
@@ -409,7 +409,7 @@ public class ComposerJsonProcessor
     while (!components.isEmpty()) {
       for (FluentComponent component : components) {
         FluentAsset asset = component.assets().stream().findFirst().orElse(null);
-        if (!asset.hasBlob()) {
+        if (asset == null || !asset.hasBlob()) {
           continue;
         }
         AssetBlob assetBlob = asset.blob().get();
