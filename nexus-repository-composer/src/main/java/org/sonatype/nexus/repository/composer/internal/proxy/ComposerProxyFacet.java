@@ -75,7 +75,7 @@ public class ComposerProxyFacet
 
   @Nullable
   @Override
-  protected Content getCachedContent(final Context context) throws IOException {
+  protected Content getCachedContent(final Context context) {
     AssetKind assetKind = context.getAttributes().require(AssetKind.class);
     Optional<Content> content;
     switch (assetKind) {
@@ -130,7 +130,6 @@ public class ComposerProxyFacet
 
   @Override
   protected void indicateVerified(final Context context, final Content content, final CacheInfo cacheInfo)
-      throws IOException
   {
     AssetKind assetKind = context.getAttributes().require(AssetKind.class);
     switch (assetKind) {
