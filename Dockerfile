@@ -5,7 +5,7 @@ ARG NEXUS_VERSION=latest
 FROM maven:3-eclipse-temurin-17 AS build
 COPY . /nexus-repository-composer/
 WORKDIR /nexus-repository-composer
-RUN mvn clean package -PbuildKar
+RUN ./mvnw clean package -PbuildKar
 
 FROM sonatype/nexus3:$NEXUS_VERSION
 
